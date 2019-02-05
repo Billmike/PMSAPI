@@ -7,6 +7,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+require('./server/routes')(app)
 app.get('*', (request, response) => response.json({
   message: 'Welcome to the population API'
 }));
